@@ -19,11 +19,25 @@ class DesktopHome extends StatelessWidget {
           width: constraints.maxWidth * 0.8,
           height: constraints.maxHeight * 0.8,
           child: LayoutBuilder( builder: (context, constraints) {
-            return Center(
-              child: Text('${constraints.maxWidth.toInt()} x ${constraints.maxHeight.toInt()} ', style: TextStyle(
-                color: Colors.blue,
-                fontSize: constraints.maxWidth * 0.2
-              ),),
+            return Column(
+              children: [
+                Expanded(
+                  child: Container(
+                    width: constraints.maxWidth,
+                    color: Colors.blue,
+                    child: Text("Column 1 ${(constraints.maxWidth * 0.04).clamp(25,52)}" , style: TextStyle(
+                      fontSize: (constraints.maxWidth * 0.04).clamp(25,52)
+                    ),),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    width: constraints.maxWidth,
+                    color: Colors.green,
+                    child: Text('Column1'),
+                  ),
+                )
+              ],
             );
         }),);
         })),
