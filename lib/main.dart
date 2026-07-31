@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue)
       ),
-
+    debugShowCheckedModeBanner: false,
       home: const CreditCard(),
     );
   }
@@ -30,7 +30,7 @@ class CreditCard extends StatelessWidget{
     if (Responsive.isDesktop(context)) {
   return const DesktopHome();
 } else {
-  return const Text("hiiii");
+  return const DesktopHome();
 } 
 }
 }
