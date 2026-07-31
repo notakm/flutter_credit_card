@@ -19,22 +19,18 @@ class DesktopHome extends StatelessWidget {
           width: constraints.maxWidth * 0.8,
           height: constraints.maxHeight * 0.8,
           child: LayoutBuilder( builder: (context, constraints) {
-            return Column(
+            return Stack(
               children: [
-                Expanded(
-                  child: Container(
-                    width: constraints.maxWidth,
-                    color: Colors.blue,
-                    child: Text("Column 1 ${(constraints.maxWidth * 0.04).clamp(25,52)}" , style: TextStyle(
-                      fontSize: (constraints.maxWidth * 0.04).clamp(25,52)
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      right: 3
+                    ),
+                    child: Text("Credit Card ${(constraints.maxWidth * 0.03).clamp(21,35)}" , style: TextStyle(
+                      color: Colors.white,
+                      fontSize: (constraints.maxWidth * 0.03).clamp(21,35)
                     ),),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    width: constraints.maxWidth,
-                    color: Colors.green,
-                    child: Text('Column1'),
                   ),
                 )
               ],
